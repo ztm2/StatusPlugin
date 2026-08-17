@@ -1,7 +1,6 @@
 package com.ztm2.status;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.*;
@@ -20,7 +19,7 @@ public class Utils {
     public static void setStatus(Player player, String status) {
         TextDisplay textDisplay = getStatusTextDisplay(player);
         if(textDisplay == null) textDisplay = spawnStatusTextDisplay(player);
-        textDisplay.text(Component.text(status, NamedTextColor.YELLOW));
+        textDisplay.text(MiniMessage.miniMessage().deserialize("[<yellow>"+status+"</yellow>]"));
     }
 
     public static TextDisplay spawnStatusTextDisplay(Player player) {
