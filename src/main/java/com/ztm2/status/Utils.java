@@ -32,6 +32,7 @@ public class Utils {
         textDisplay.setBillboard(Display.Billboard.CENTER);
         textDisplay.setSeeThrough(false);
         textDisplay.getPersistentDataContainer().set(STATUS_OWNER_KEY,PersistentDataType.STRING,player.getUniqueId().toString());
+        player.hideEntity(plugin,textDisplay);
 
         Vector3f translation = new Vector3f(0.0f, 0.1f, 0.0f);
         AxisAngle4f rot = new AxisAngle4f();
