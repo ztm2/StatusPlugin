@@ -5,6 +5,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.entity.Player;
 
 public class StatusCommand {
@@ -21,6 +22,7 @@ public class StatusCommand {
         String status = ctx.getArgument("status", String.class);
         if(player == null || status == null) return 0;
         Utils.setStatus(player,status);
+        player.sendMessage(MiniMessage.miniMessage().deserialize("<green>ステータスメッセージを更新しました</green>"));
         return 1;
     }
 
@@ -28,6 +30,7 @@ public class StatusCommand {
         Player player = (Player) ctx.getSource().getExecutor();
         if(player == null) return 0;
         Utils.clearStatus(player);
+        player.sendMessage(MiniMessage.miniMessage().deserialize("<green>ステータスメッセージをクリアしました</green>"));
         return 1;
     }
 }
