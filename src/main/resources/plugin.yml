@@ -1,5 +1,5 @@
 name: Status
-version: '1.0.0'
+version: '1.0.1'
 main: com.ztm2.status.Status
 api-version: '26.2'
 authors: [ ztm2 ]
